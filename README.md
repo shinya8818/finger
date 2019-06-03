@@ -1,24 +1,65 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+|password_confirmation|string|null: false|
+|self_introduction|text||
+|sex|integer|null: false|
+|img_name|string|null: false|
 
-Things you may want to cover:
+### Association
 
-* Ruby version
+has_many :reactions  
+has_many :chat_room_users  
+has_many :chat_messages  
 
-* System dependencies
+## reactionsテーブル
 
-* Configuration
+|Column|Type|Options|
+|------|----|-------|
+|to_user_id|integer|null: false|
+|from_user_id|integer|null: false|
+|status|integer|null: false|
 
-* Database creation
+### Association
 
-* Database initialization
+belongs_to :user  
 
-* How to run the test suite
+## chat_messagesテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+|Column|Type|Options|
+|------|----|-------|
+|chat_room|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|message|text|null: false|
 
-* Deployment instructions
 
-* ...
+### Association
+
+belongs_to :user  
+belongs_to :chat_room
+
+## chat_roomテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+
+### Association
+
+has_many :chat_messages
+has_many :chat_room_users
+
+## chat_room_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|chat_room|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+
+### Association
+
+belongs_to :user
+belongs_to :chat_room_user
