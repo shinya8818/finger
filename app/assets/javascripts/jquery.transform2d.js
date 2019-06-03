@@ -549,4 +549,3 @@
   };
   
   })( jQuery, window, document, Math );
-  
