@@ -7,7 +7,9 @@
     text-align: center;
     &_title {
       margin-top: 12vh;
-      font-family: "メイリオ", sans-serif;
+      font-family:"游ゴシック Medium",YuGothic,YuGothicM,"Hiragino Kaku Gothic ProN","Hiragino Kaku Gothic Pro",メイリオ,Meiryo,sans-serif;
+      font-weight: bold;
+      color: #FF69B4;
     }
     &_btn {
       display: block;
