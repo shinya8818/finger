@@ -40,7 +40,7 @@ belongs_to :user
 ### Association
 
 belongs_to :user  
-belongs_to :chat_room
+belongs_to :chat_room  
 
 ## chat_roomテーブル
 
@@ -49,8 +49,8 @@ belongs_to :chat_room
 
 ### Association
 
-has_many :chat_messages
-has_many :chat_room_users
+has_many :chat_messages  
+has_many :chat_room_users  
 
 ## chat_room_usersテーブル
 
@@ -61,5 +61,5 @@ has_many :chat_room_users
 
 ### Association
 
-belongs_to :user
-belongs_to :chat_room_user
+belongs_to :user  
+belongs_to :chat_room_user  
